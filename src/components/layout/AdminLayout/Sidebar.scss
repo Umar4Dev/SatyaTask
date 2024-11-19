@@ -1,0 +1,235 @@
+.sidebar-main {
+  padding-bottom: 40px;
+  background: hsl(0, 0%, 100%);
+  max-height: 100vh;
+  position: relative;
+  border-right: 1px solid #dfe1e6;
+
+  .simplebar-scrollbar::before {
+    background-color: #025628;
+    opacity: 0 !important;
+  }
+
+  .sidebar-logo {
+    width: 100%;
+    text-align: center;
+    padding: 0.88rem 0rem;
+    border-bottom: 1px solid #eaecf0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 250px;
+      margin-left: 0.88rem;
+    }
+  }
+
+  .sidebar-menu-list {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    h3 {
+      margin-left: 2rem;
+      font-family: "Sarabun-Medium";
+      font-size: 12px;
+    }
+    .each-icon {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 12px 20px;
+      color: #666d80;
+      margin: 0 1rem;
+      display: flex;
+      font-size: 16px;
+      text-decoration: none;
+      font-family: "Sarabun-Regular";
+
+      img {
+        object-fit: contain;
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .dashboard-svg {
+      filter: none;
+    }
+
+    .each-icon:hover {
+      background: #f8f9fb;
+      transition: 0.5s ease;
+      color: #0d0d12;
+
+      border-radius: 8px;
+      .dashboard-svg {
+        filter: invert(28%) sepia(58%) saturate(2242%) hue-rotate(208deg)
+          brightness(94%) contrast(98%);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        left: -16px;
+        top: 10px;
+        bottom: 0;
+        width: 4px;
+        height: 27px;
+        background-color: #4e57ef;
+        border-top-right-radius: 45%;
+        border-bottom-right-radius: 45%;
+      }
+    }
+
+    .each-icon.active {
+      background: #f8f9fb;
+
+      color: #0d0d12;
+      border-radius: 8px;
+
+      .dashboard-svg {
+        filter: invert(28%) sepia(58%) saturate(2242%) hue-rotate(208deg)
+          brightness(94%) contrast(98%);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        left: -16px;
+        top: 10px;
+        bottom: 0;
+        width: 4px;
+        height: 27px;
+        background-color: #4e57ef;
+        border-top-right-radius: 45%;
+        border-bottom-right-radius: 45%;
+      }
+    }
+
+    .activeForInitial {
+      background: #f8f9fb;
+
+      font-size: 12px;
+      color: #fff;
+      border-radius: 8px;
+      .dashboard-svg {
+        filter: none;
+      }
+      .svg-icon {
+        filter: invert(100%);
+      }
+      .dashboard-svg {
+        fill: #4e57ef;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar-main {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 1em;
+
+    .sidebar-logo {
+      display: none;
+    }
+
+    .sidebar-menu-list {
+      margin: 0;
+      padding-right: 1em;
+      display: flex;
+      flex-direction: row;
+      height: fit-content;
+      gap: 12px;
+      justify-content: space-evenly;
+      align-items: center;
+      width: fit-content;
+
+      .each-icon-div {
+        height: auto;
+        margin: 0;
+
+        .each-icon {
+          padding: 0.5em;
+          vertical-align: middle;
+          /* .icon {
+            font-size: 2rem;
+          } */
+        }
+      }
+    }
+  }
+}
+
+.span-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #666d80;
+  display: flex;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: "Sarabun-Regular";
+}
+
+.dropdown-contentt {
+  background: #ffffff;
+  border-radius: 4px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: max-height 0.8s ease, opacity 0.5s ease, visibility 0.5s ease;
+  .each-sub-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 6px 20px;
+    color: #666d80;
+    margin: 0 4.5rem;
+    display: flex;
+    font-size: 16px;
+    text-decoration: none;
+    font-family: "Sarabun-Regular";
+    width: 70%;
+    cursor: pointer;
+
+    &:hover {
+      color: #4e57ef;
+    }
+  }
+  &.open {
+    max-height: 200px;
+    opacity: 1;
+    visibility: visible;
+  }
+  p {
+    margin: 0;
+    cursor: pointer;
+    color: #808897;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    font-family: "Sarabun-Regular";
+    font-size: .9em;
+    &:hover {
+      color: #4E57EF;
+    }
+
+    &.active {
+      color: #4E57EF;
+    }
+  }
+}

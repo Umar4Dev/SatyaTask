@@ -1,0 +1,9 @@
+{
+  "dev": true,
+  "appName": "LMS",
+  "api": "",
+  "maintenance": false,
+  "sessionKey": "lms_admin",
+  "learnerSessionKey": "lms_learner",
+  "instructorKey": "lms_instructor"
+}
